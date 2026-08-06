@@ -1,0 +1,431 @@
+/* club.php */
+.page-title {
+    padding: 20px 30px;
+}
+
+.pinned-content {
+    display: flex; 
+    gap: 15px; 
+    align-items: center;
+}
+
+.pinned-content img {
+    width: 85px; 
+    height: 85px; 
+    border-radius: 6px; 
+    object-fit: cover; 
+    flex-shrink: 0; 
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.post-text-wrapper {
+    overflow: hidden;
+}
+
+.post-text-wrapper strong {
+    display:block; 
+    color:#1f3c88; 
+    font-size: 1rem; 
+    margin-bottom: 4px; 
+    line-height: 1.2;
+}
+
+.post-text-wrapper p {
+    font-size: 0.85rem; 
+    color: #444; 
+    margin: 0; 
+    line-height: 1.4;
+}
+
+
+/* Club List */
+.club-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr; 
+    gap: 20px; 
+    padding: 20px 0;
+    margin: 20px 30px 25px 30px;
+}
+
+/* Empty State */
+.empty-state {
+    background: white;
+    padding: 40px;
+    text-align: center;
+    border-radius: 6px;
+    box-shadow: 0 0 6px rgba(0,0,0,0.08);
+}
+
+/* Club Card */
+.club-card {
+    background: white;
+    border-radius: 16px;
+    padding: 25px;
+    position: relative;
+    transition: all 0.3s ease;
+    border: 1px solid #eef2ff;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.club-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 30px rgba(31, 60, 136, 0.12);
+    border-color: #3a86ff;
+}
+
+.club-profile-wrapper {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 60px;
+    height: 60px;
+}
+
+.club-profile-img, .club-profile-default {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #fff;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #f0f4ff;
+    font-size: 24px;
+}
+
+.category-badge {
+    display: inline-block;
+    background: rgba(58, 134, 255, 0.1);
+    color: #3a86ff;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}
+
+.club-card h3 {
+    margin: 5px 0;
+    color: #1f3c88;
+    font-size: 20px;
+    width: calc(100% - 70px); /* Leave room for the icon */
+}
+
+.club-meta {
+    display: flex;
+    gap: 15px;
+    font-size: 12px;
+    color: #888;
+    margin-top: 5px;
+    margin-bottom: 15px;
+}
+
+.club-desc {
+    color: #555;
+    line-height: 1.6;
+    font-size: 14px;
+    margin-bottom: 20px;
+    flex-grow: 1;
+}
+
+/* Pinned Post Style */
+.pinned-post-section {
+    background: #f0f7ff;
+    padding: 10px;
+    border-radius: 6px;
+    margin-top: 15px;
+    border-left: 4px solid #3a86ff;
+    min-height: 85px; /* Ensures all cards stay the same size */
+}
+.pinned-label {
+    font-size: 11px;
+    font-weight: bold;
+    color: #3a86ff;
+    margin-bottom: 5px;
+    display: flex;
+    align-items: center;
+}
+
+.pin-icon { margin-right: 5px; }
+
+.pinned-content p {
+    margin: 0;
+    font-size: 13px;
+    color: #444;
+    font-style: italic;
+}
+
+.card-footer {
+    border-top: 1px solid #eee;
+    padding-top: 15px;
+    text-align: right;
+}
+
+.view-link {
+    font-weight: 600;
+    color: #3a86ff;
+    font-size: 14px;
+}
+
+
+.club-info h3 {
+    margin: 0;
+}
+
+/* Description */
+.club-desc {
+    margin: 15px 0;
+}
+
+/* Public Post Section */
+.club-post {
+    display: flex;
+    gap: 15px;
+    border-top: 1px solid #eee;
+    padding-top: 15px;
+}
+
+.post-text-wrapper {
+    overflow: hidden; /* Prevents long titles from breaking the layout */
+}
+
+.post-content h4 {
+    margin: 0 0 5px 0;
+}
+
+@media (max-width: 900px) {
+    .club-list {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* view_club.php */
+.club-view-container {
+    max-width: 1000px; 
+    margin: 40px auto; 
+    padding: 0 20px;
+}
+
+.club-hero-card {
+    background: white; 
+    padding: 30px; 
+    border-radius: 15px; 
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05); 
+    display: flex; 
+    gap: 30px;
+}
+
+.club-main-info {
+    flex: 2;
+}
+
+.club-main-info h1 {
+    margin: 15px 0 10px 0; 
+    font-size: 32px;
+}
+
+.club-main-info p {
+    color: #555; 
+    line-height: 1.6; 
+    font-size: 16px;
+}
+
+.club-main-info hr {
+    border: 0; 
+    border-top: 1px solid #eee; 
+    margin: 25px 0;
+}
+
+.action-area {
+    margin-top: 30px;
+}
+
+.join-box p {
+    font-size: 14px; 
+    color: #666;
+}
+
+.club-sidebar-info {
+    flex: 1; 
+    background: #f8f9fa; 
+    padding: 25px; 
+    border-radius: 12px; 
+    align-self: flex-start;
+}
+
+.stat-item {
+    margin-bottom: 20px;
+}
+
+.stat-item strong {
+    display: block; 
+    font-size: 12px; 
+    color: #888; 
+    text-transform: uppercase;
+}
+
+.stat-item span {
+    font-weight: 600;
+}
+
+
+.join-box {
+    background: #fff;
+    padding: 20px;
+    border-radius: 12px;
+    border: 1px solid #e0e6ed;
+    margin-top: 20px;
+}
+
+.appeal-box {
+    width: 95%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    margin: 10px 0;
+    font-family: inherit;
+    resize: vertical;
+}
+
+.pending-badge {
+    background: #fff3cd;
+    color: #856404;
+    padding: 15px;
+    border-radius: 8px;
+    border-left: 5px solid #ffeeba;
+    font-weight: 600;
+}
+
+.public-posts {
+    margin-top: 40px; 
+    clear: both;
+}
+
+.public-posts h2 {
+    color: #1f3c88; 
+    border-bottom: 2px solid #3a86ff; 
+    padding-bottom: 10px; 
+    margin-bottom: 25px;
+}
+
+.post-card {
+    background: white; 
+    display: flex; 
+    gap: 25px; 
+    padding: 25px; 
+    border-radius: 12px; 
+    border: 2px solid #e1e8f0; 
+    margin-bottom: 25px; 
+    box-shadow: 0 4px 6px rgba(0,0,0,0.02); 
+    align-items: flex-start; 
+    width: 100%;
+}
+
+.post-image-aside {
+    width: 40%;
+    flex-shrink: 0;
+}
+
+.post-image-aside img {
+    width: 100%; 
+    height: 100%; 
+    object-fit: cover; 
+    border-radius: 8px; 
+    display: block; 
+    border: 1px solid #eee;
+}
+
+.post-image-aside-empty {
+    width: 400px; 
+    height: 300px; 
+    background: #f8f9fa; 
+    border-radius: 8px; 
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+    color: #cbd5e0; 
+    flex-shrink: 0; 
+    border: 1px dashed #cbd5e0; 
+    font-size: 3rem;
+}
+
+.post-body-main {
+    flex-grow: 1; 
+    overflow: hidden; 
+    padding-top: 5px;
+}
+
+.post-header {
+    margin-bottom: 15px; 
+    border-bottom: 1px solid #f0f2f5; 
+    padding-bottom: 10px;
+}
+
+.post-header h3 {
+    color: #1f3c88; 
+    margin: 0 0 5px 0; 
+    font-size: 1.6rem; 
+    letter-spacing: -0.5px;
+}
+
+.post-header small {
+    color: #718096; 
+    font-weight: 500; 
+    display: flex; 
+    align-items: center; 
+    gap: 5px;
+}
+
+.post-content {
+    line-height: 1.8; 
+    color: #2d3748; 
+    font-size: 1rem; 
+    margin-bottom: 20px;
+}
+
+.post-footer {
+    display: flex; 
+    justify-content: flex-start;
+}
+
+.post-footer span {
+    background: #ebf8ff; 
+    color: #3182ce; 
+    padding: 6px 14px; 
+    border-radius: 6px; 
+    font-size: 12px; 
+    font-weight: 700; 
+    text-transform: uppercase; 
+    border: 1px solid #bee3f8;
+}
+
+.post-card-empty {
+    text-align: center; 
+    padding: 60px; 
+    color: #a0aec0; 
+    border: 2px dashed #e2e8f0; 
+    border-radius: 12px; 
+    background: #f7fafc;
+}
+
+.post-card-empty p {
+    font-size: 1.1rem; 
+    margin: 0;
+}

@@ -1,0 +1,281 @@
+/* Sidebar */
+.sidebar {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 200px; 
+    height: 100%;
+    background: #1f3c88;
+    /*padding-top: 20px; */
+    transition: width 0.3s ease;
+    z-index: 1000;
+    overflow-x: hidden; /* Prevents text from peeking out */
+}
+
+.sidebar::-webkit-scrollbar {
+    display: none;
+}
+ 
+/* Hide text labels when collapsed */
+.sidebar.collapsed .nav-item span,
+.sidebar.collapsed .collapse-btn span {
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0s, visibility 0s;
+}
+
+.sidebar.collapsed {
+    width: 60px; /* collapsed width */
+}
+
+.sidebar.collapsed ~ .main-content {
+    margin-left: 60px; /* collapsed width */
+}
+
+/* Sidebar Links: Fix for horizontal alignment */
+.nav-item {
+    display: flex;
+    align-items: center;
+    padding: 12px 20px;
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+    white-space: nowrap;
+}
+
+/* Ensure icons stay centered or aligned when collapsed */
+.nav-item i, .nav-item {
+    min-width: 60px;
+}
+
+/* Ensure the text has a gap from the icon */
+.nav-item span,
+.collapse-btn span {
+    margin-left: 12px;
+    opacity: 1;
+    visibility: visible;
+    /* When expanding: wait 0.3s before showing */
+    transition: opacity 0s linear 0.3s, visibility 0s linear 0.3s;
+}
+.nav-item:hover {
+    background: #3a86ff;
+}
+.nav-item.active {
+    border-left: 5px solid #ffffff; 
+    background: rgba(255, 255, 255, 0.15); 
+    font-weight: bold;
+    color: #fff !important;
+}
+/* Collapse Button */
+.collapse-btn {
+    width: 100%;
+    text-align: left;
+    padding: 12px 22px;
+    background: #1f3c88;
+    border: none;
+    color: white;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+/* Make the bell vibrate or glow if there are unread messages */
+/* Container for the icon to ensure consistent width/alignment */
+.nav-icon {
+    align-items: center;
+    justify-content: center;
+    width: 0px; /* Fixed width matching your other emoji icons */
+    margin-right: 15px;
+    text-align: center;
+    flex-shrink: 0; /* Prevents the icon from squishing */
+}
+
+.noti-glow {
+    display: inline-block;
+    filter: drop-shadow(0 0 5px #ff4d4d);
+    animation: ring 2s ease infinite;
+}
+
+@keyframes ring {
+  0% { transform: rotate(0); }
+  5% { transform: rotate(15deg); }
+  10% { transform: rotate(-15deg); }
+  15% { transform: rotate(10deg); }
+  20% { transform: rotate(-10deg); }
+  25% { transform: rotate(0); }
+  100% { transform: rotate(0); }
+}
+
+
+/* Top Bar */
+.topbar {
+    background: white;
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 15px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+
+
+
+/* Sidebar Section Labels */
+.sidebar-section-title {
+    padding: 10px 20px 5px;
+    font-size: 12px;
+    color: #a0b4ff;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+/* Sub-items (Joined Communities) */
+.sub-item {
+    padding-left: 25px;
+    font-size: 13px;
+}
+
+/* THE TRUNCATION LOGIC */
+.comm-name {
+    flex: 1;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis; /* Adds the "..." */
+    max-width: 140px; /* Adjust based on sidebar width */
+}
+
+.sidebar.collapsed .comm-name,
+.sidebar.collapsed .sidebar-section-title,
+.sidebar.collapsed .see-more-btn {
+    display: none;
+}
+
+/* See More Button */
+.see-more-btn {
+    background: none;
+    border: none;
+    color: #3ea6ff;
+    padding: 10px 25px;
+    cursor: pointer;
+    font-size: 13px;
+    width: 100%;
+    text-align: left;
+}
+
+.see-more-btn:hover {
+    text-decoration: underline;
+}
+
+.hidden-item {
+    display: none;
+}
+
+.sidebar-divider {
+    border: 0;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    margin: 10px 0;
+}
+
+
+.nav-tab-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+}
+
+.section-toggle-btn {
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+    padding: 10px;
+    font-size: 10px;
+    transition: transform 0.3s ease;
+    margin-right: 10px;
+}
+
+.section-toggle-btn.rotated {
+    transform: rotate(180deg);
+}
+
+/* Hide toggle buttons when sidebar is collapsed */
+.sidebar.collapsed .section-toggle-btn {
+    display: none;
+}
+
+/* Floating Profile Container */
+.floating-profile-container {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1000;
+}
+
+.floating-profile-link {
+    text-decoration: none;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 12px;
+}
+
+/* The Circle Icon */
+.profile-icon-circle {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease, background 0.3s ease;
+    border: 2px solid #fff;
+}
+
+/* The Tooltip (Full Name and Email) */
+.profile-tooltip {
+    background: white;
+    padding: 8px 15px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    margin-right: 12px; 
+    opacity: 0;
+    visibility: hidden;
+    transform: translateX(15px); /* Start slightly to the right */
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    border: 1px solid #eee;
+    text-align: right; /* Aligns text towards the icon */
+    pointer-events: none;
+}
+
+.tooltip-name {
+    font-weight: 600;
+    color: #333;
+    font-size: 14px;
+    white-space: nowrap;
+}
+
+.tooltip-email {
+    font-size: 12px;
+    color: #666;
+    white-space: nowrap;
+}
+
+/* Hover States */
+.floating-profile-link:hover .profile-icon-circle {
+    transform: scale(1.1);
+    background: #2563eb;
+}
+
+.floating-profile-link:hover .profile-tooltip {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(0);
+}

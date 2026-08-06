@@ -1,0 +1,63 @@
+.dashboard-container {
+    max-width: 1000px;
+    margin: 20px auto;
+    padding: 20px;
+}
+
+.dashboard-header {
+    margin-bottom: 30px;
+    border-bottom: 2px solid #3a86ff;
+    padding-bottom: 15px;
+}
+
+.dashboard-header h1 {
+    font-size: 28px;
+    color: #1f3c88;
+    margin: 0;
+}
+
+.dashboard-header p {
+    color: #666;
+    margin-top: 5px;
+}
+
+.admin-table-card {
+    margin-bottom: 20px;
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+
+.admin-table-card h3 {
+    margin-top: 0;
+    margin-bottom: 20px;
+    color: #333;
+    font-size: 18px;
+    border-left: 4px solid #3a86ff;
+    padding-left: 15px;
+}
+
+
+/* Manage_Users.php */
+
+.status-indicator {
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.status-badge { font-size: 13px; padding: 10px; border-radius: 30px; }
+.status-pending { color: #e67e22; }      /* Orange */
+.status-under_review { color: #3498db; } /* Blue */
+.status-resolved { color: #27ae60; }     /* Green */
+.status-dismissed { color: #95a5a6; }    /* Grey */
+
+.user-info-cell strong {
+    display: block;
+    color: #222;
+    font-size: 14px;
+}
+.online { background: #d4edda; color: #155724; }
+.offline { background: #e2e3e5; color: #383d41; }
+.role-admin { color: #3a86ff; font-weight: bold; }

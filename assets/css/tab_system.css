@@ -1,0 +1,183 @@
+/* TAB SYSTEM */
+.tab-system {
+    margin-top: 30px;
+}
+
+.tab-headers {
+    display: flex;
+    gap: 5px;
+    border-bottom: 2px solid #ddd;
+}
+
+.tab-btn {
+    padding: 12px 25px;
+    border: 1px solid #ddd;
+    border-bottom: none;
+    background: #f8f9fa;
+    cursor: pointer;
+    font-weight: 600;
+    border-radius: 10px 10px 0 0;
+    transition: 0.3s;
+    color: #666;
+}
+
+.tab-btn.active {
+    background: white;
+    color: #3a86ff;
+    border-top: 3px solid #3a86ff;
+    margin-bottom: -2px; /* Pulls it down to hide the bottom border */
+    padding-bottom: 14px;
+}
+
+.tab-content {
+    display: none;
+    background: white;
+    padding: 30px;
+    border: 1px solid #ddd;
+    border-top: none;
+    border-radius: 0 0 10px 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+
+.tab-content.active {
+    display: block !important;
+}
+
+/* FORM GROUP */
+/* Container and Form Background */
+.form-container {
+    max-width: 500px;
+    margin: 20px auto;
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 16px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+}
+
+/* Typography & Labels */
+.modern-form .form-group {
+    margin-bottom: 20px;
+}
+
+.modern-form label {
+    display: block;
+    font-size: 14px;
+    font-weight: 600;
+    color: #4a5568;
+    margin-bottom: 8px;
+    transition: color 0.3s ease;
+}
+
+/* Input & Textarea Styling */
+.modern-form input,
+.modern-form select,
+.modern-form textarea {
+    width: 100%;
+    padding: 12px 16px;
+    border: 2px solid #edf2f7;
+    border-radius: 10px;
+    font-size: 15px;
+    background-color: #f8fafc;
+    transition: all 0.3s ease;
+    box-sizing: border-box; /* Crucial for padding */
+}
+
+textarea {
+    resize: none;
+}
+
+.modern-form input:focus,
+.modern-form select:focus,
+.modern-form textarea:focus {
+    outline: none;
+    border-color: #3a86ff;
+    background-color: #fff;
+    box-shadow: 0 0 0 4px rgba(58, 134, 255, 0.1);
+}
+
+/* Customizing the File Upload */
+.modern-form input[type="file"] {
+    font-size: 14px;
+    color: #718096;
+    padding: 10px 0;
+}
+
+
+
+
+.request-list {
+    list-style: none;
+    padding: 0;
+}
+
+.request-list li {
+    padding: 12px 15px;
+    border-bottom: 1px solid #eee;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.request-list li:last-child {
+    border-bottom: none;
+}
+
+
+
+
+/* COMMUNITY CARDS */
+.community-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.mini-card {
+    border: 1px solid #eee;
+    padding: 20px;
+    border-radius: 12px;
+    background: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: transform 0.2s;
+}
+
+.mini-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.mini-card .badge {
+    font-size: 11px;
+    background: #eef2ff;
+    color: #3a86ff;
+    padding: 2px 8px;
+    width: fit-content;
+    border-radius: 4px;
+}
+
+.card-info {
+    margin-bottom: 15px;
+}
+
+.card-info strong {
+    display: block;
+    font-size: 16px;
+    margin-bottom: 5px;
+}
+
+.card-actions {
+    display: flex;
+    gap: 10px;
+}
+
+.card-actions .btn-small {
+    font-weight: 600;
+    border-radius: 6px;
+    text-decoration: none;
+    font-size: 13px;
+    flex: 1;
+    text-align: center;
+    white-space: nowrap;
+}

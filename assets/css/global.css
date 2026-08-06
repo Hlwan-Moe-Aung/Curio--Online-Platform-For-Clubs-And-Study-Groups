@@ -1,0 +1,671 @@
+/* VARIABLES - Change these to change the whole site color */
+:root {
+    --primary-blue: #1f3c88;
+    --accent-blue: #3a86ff;
+    --bg-light: #f4f6fb;
+    --text-dark: #222;
+    --white: #ffffff;
+    --shadow: 0 4px 12px rgba(0,0,0,0.05);
+    --primary: #1f3c88;
+    --accent: #3a86ff;
+    --text-main: #2d3436;
+    --text-light: #636e72;
+}
+
+/* 2. BASE STYLES */
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: var(--bg-light);
+    color: var(--text-dark);
+}
+
+/* FOOTER STYLE */
+footer {
+    background: #111;
+    color: #aaa;
+    text-align: center;
+    padding: 15px;
+}
+
+.rules-help-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 28px;
+    height: 28px;
+    background-color: #f0f0f0;
+    color: #555;
+    border: 2px solid #ddd;
+    border-radius: 50%;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.rules-help-btn:hover {
+    background-color: #2563eb; /* Matches your Rules page primary color */
+    color: white;
+    border-color: #2563eb;
+    transform: scale(1.1);
+}
+
+
+
+
+/* CONSISTENT TABLE STYLES */
+/* Use .standard-table on any <table> tag */
+.standard-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: var(--white);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+}
+
+.standard-table th {
+    background: var(--primary-blue);
+    color: white;
+    padding: 15px;
+    text-align: left;
+}
+
+.standard-table td {
+    padding: 12px 15px;
+    border-bottom: 1px solid #eee;
+}
+
+.standard-table tr:hover {
+    background-color: #fcfdfe;
+}
+
+.empty-standard-table td {
+    text-align:center; 
+    color:#999; 
+    padding:20px;
+}
+
+
+
+
+
+
+/* BUTTON SYSTEM */
+.btn {
+    background: var(--accent-blue);
+    color: black;
+    padding: 10px 20px;
+    text-decoration: none;
+    margin: 5px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn:hover { 
+    opacity: 0.9; 
+    transform: translateY(-1px); 
+}
+
+.btn-text {
+    background: none;
+    border: none;
+    color: #3a86ff;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+/* Primary Action - Blue */
+.btn-signup {
+    background: #1f3c88;
+    color: white !important;
+    padding: 10px 20px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 600;
+    display: inline-block; /* Helps with padding/sizing */
+    border: 1px solid #1f3c88; /* Ensures same size as outline btn */
+    transition: background 0.3s ease;
+}
+
+/* Secondary Action - White/Outline */
+.btn-login {
+    background: white;
+    color: #1f3c88 !important;
+    padding: 10px 20px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 600;
+    display: inline-block;
+    border: 1px solid #1f3c88; /* Matches border to primary button */
+    transition: all 0.3s ease;
+}
+
+/* Hover Effects */
+.btn-signup:hover {
+    background: #152a5f; /* Slightly darker blue */
+    border-color: #152a5f;
+}
+
+.btn-login:hover {
+    background: #f0f4ff; /* Light blue tint on hover */
+}
+
+
+.btn-small {
+    display: inline-block;
+    padding: 8px 16px;
+    background: #3a86ff;
+    color: white;
+    text-decoration: none;
+    border-radius: 6px;
+    font-size: 13px;
+    font-weight: 600;
+    transition: background 0.2s;
+}
+
+.btn-small:hover {
+    background: #2563eb;
+    box-shadow: 0 2px 8px rgba(58, 134, 255, 0.3);
+}
+
+.btn-approve { 
+    background: #28a745; 
+    color: white; 
+    padding: 5px 10px; 
+    border-radius: 4px; 
+    text-decoration: none; 
+    font-size: 13px; 
+}
+
+.btn-reject { 
+    background: #dc3545; 
+    color: white; 
+    padding: 5px 10px; 
+    border-radius: 4px; 
+    text-decoration: none; 
+    font-size: 13px; 
+}
+
+.btn-approve:hover { 
+    background: #219150 !important; 
+}
+
+.btn-reject:hover { 
+    background: #c0392b !important; 
+}
+
+
+.btn-delete {
+    background-color: #fff;
+    color: #dc3545;
+    border: 1px solid #dc3545;
+    padding: 8px 16px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.btn-delete:hover {
+    background-color: #dc3545;
+    color: white;
+}
+
+
+.btn-back {
+    background: none;
+    border: none;
+    color: #666;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.btn-back:hover { color: #333; }
+
+.btn-submit {
+    width: 100%;
+    padding: 14px;
+    background: linear-gradient(135deg, #3a86ff 0%, #2563eb 100%);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.btn-submit:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(37, 99, 235, 0.4);
+}
+
+.btn-submit:active {
+    transform: translateY(0);
+}
+.action-btn {
+    flex: 1;
+    background: none;
+    border: none;
+    padding: 8px;
+    border-radius: 5px;
+    cursor: pointer;
+    color: #666;
+    font-weight: 600;
+    transition: background 0.2s;
+}
+
+.action-btn:hover {
+    background: #f0f2f5;
+    color: #3a86ff;
+}
+
+.action-btn.liked {
+    color: #3a86ff;
+    font-weight: bold;
+}
+
+button:disabled {
+    opacity: 0.6;
+    filter: grayscale(0.5);
+    cursor: not-allowed !important;
+}
+
+.fab {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 60px;
+    height: 60px;
+    background-color: #3a86ff;
+    color: white;
+    border-radius: 50%;
+    border: none;
+    font-size: 30px;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(58, 134, 255, 0.4);
+    z-index: 1000;
+    transition: transform 0.2s, background-color 0.2s;
+}
+
+.fab:hover {
+    transform: scale(1.1);
+    background-color: #2563eb;
+}
+
+
+/* TOP BAR STYLE */
+.topbar {
+    background: white;
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 15px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.site-name {
+    font-size: 20px;
+    font-weight: bold;
+    color: #1f3c88;
+}
+
+
+
+
+
+
+
+
+/* MAIN CONTENT */
+.main-content {
+    margin-left: 200px; 
+    transition: margin-left 0.3s ease; 
+}
+
+.main-content.expanded {
+    margin-left: 60px !important; /* Keep room for the icon-bar */
+}
+
+
+
+
+
+
+
+
+/* MESSAGE STYLE */
+.empty-msg {
+    color: #999;
+    font-style: italic;
+    text-align: center;
+    grid-column: 1 / -1;
+}
+
+.success-msg {
+    background: #d4edda;
+    color: #155724;
+    padding: 15px;
+    border-radius: 8px;
+    margin: 20px 0;
+    text-align: center;
+    border-left: 5px solid #28a745;
+    font-weight: 600;
+}
+
+.success-msg-reject {
+    background:#f8d7da; 
+    color:#721c24; 
+    border-color:#f5c6cb;
+}
+
+
+
+
+
+
+/* FILTER BAR STYLE */
+.filter-bar {
+    margin: 20px 30px 25px 30px;
+    padding: 15px 20px;
+    background: linear-gradient(135deg, #f8f9ff, #eef2ff);
+    border-radius: 10px;
+    display: flex;
+    flex-wrap: wrap; 
+    align-items: center;
+    gap: 15px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.06);
+}
+
+.filter-input {
+    padding: 8px 12px;
+    border-radius: 6px;
+    border: 1px solid #ccd3e0;
+    background: white;
+    font-size: 14px;
+    transition: all 0.2s ease;
+    outline: none;
+}
+
+.filter-input.small {
+    width: 110px;
+}
+
+.filter-input:focus {
+    border-color: #1f3c88;
+    box-shadow: 0 0 0 2px rgba(31,60,136,0.15);
+}
+
+.filter-input:hover {
+    border-color: #3a86ff;
+}
+
+.filter-input[type="text"] {
+    flex: 1;
+}
+
+
+
+
+
+
+.badge {
+    background: #1f3c88;
+    color: white;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.badge-count {
+    background: #ff4d4d;
+    color: white;
+    padding: 2px 8px;
+    border-radius: 20px;
+    font-size: 12px;
+    margin-left: 5px;
+}
+
+
+
+
+
+
+/* Admin Feature Online Status */
+.status-dot.online {
+    color: #2ecc71;
+    font-weight: bold;
+    animation: blink 2s infinite; /* Optional: adds a subtle heartbeat pulse */
+}
+
+.status-dot.offline {
+    color: #95a5a6;
+}
+
+@keyframes blink {
+    0% { opacity: 1; }
+    50% { opacity: 0.6; }
+    100% { opacity: 1; }
+}
+
+
+
+
+
+
+
+/* Disband panding community feature */
+.disband-banner {
+    position: sticky; /* Keeps it at the top of its container */
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: linear-gradient(90deg, #e74c3c, #c0392b);
+    color: white;
+    z-index: 1000;
+    padding: 12px 20px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    border-bottom: 3px solid rgba(0,0,0,0.1);
+    margin-bottom: 20px;
+}
+
+.banner-content {
+    display: flex;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    gap: 15px;
+}
+
+.banner-icon {
+    font-size: 24px;
+    animation: pulse 2s infinite;
+}
+
+.banner-text strong {
+    display: block;
+    font-size: 16px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.banner-text p {
+    margin: 0;
+    font-size: 13px;
+    opacity: 0.9;
+}
+
+.banner-btn {
+    margin-left: auto;
+    margin-right: 30px;
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+    padding: 6px 15px;
+    border-radius: 4px;
+    text-decoration: none;
+    font-size: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    transition: 0.3s;
+}
+
+.banner-btn:hover {
+    background: white;
+    color: #e74c3c;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+
+
+
+
+
+/* Drop down for upload files */
+.drop-zone {
+    min-height: 50px;
+    margin: 20px 0 20px 0;
+    border:2px dashed #cbd5e1;
+    padding:16px;
+    border-radius:8px;
+    text-align:center;
+    cursor:pointer;
+    background: #fbfdff;
+    transition: border-color 0.15s ease, background 0.15s ease;
+    align-content: center;
+}
+
+.drop-zone:hover {
+    background-color: #f8f9fa; 
+}
+
+.drop-zone p { 
+    margin:0;
+    color:#6b7280; 
+}
+
+
+/* report_form.php */
+.checkbox-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    opacity: 0; /* Start invisible */
+    animation: fadeInRight 0.4s ease forwards;
+}
+
+@keyframes fadeInRight {
+    from { opacity: 0; transform: translateX(-15px); }
+    to { opacity: 1; transform: translateX(0); }
+}
+
+/* Container for all reasons */
+.report-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 12px; /* Adds space between each row */
+    margin-top: 15px;
+}
+
+/* Individual row containing one checkbox and its label */
+.checkbox-item {
+    display: flex;
+    align-items: center; /* Vertically centers checkbox with text */
+    gap: 10px;           /* Space between checkbox and text */
+    padding: 5px 0;
+}
+
+/* Ensure the checkbox has a consistent size */
+.checkbox-item input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    cursor: pointer;
+    margin: 0; /* Removes default browser margins */
+}
+
+/* Style the label to align with the checkbox */
+.checkbox-item label {
+    display: flex;
+    align-items: center;
+    font-size: 0.95rem;
+    cursor: pointer;
+    color: #333;
+    flex: 1;
+}
+
+/* Optional: Icon spacing */
+.info-icon {
+    margin-left: 8px;
+    color: #666;
+    font-size: 0.85em;
+}
+
+/* Container for the icon and the hidden text */
+.tooltip-container {
+    position: relative;
+    display: inline-block;
+    margin-left: 8px;
+    cursor: help;
+}
+
+/* The ⓘ icon styling */
+.info-icon {
+    color: #007bff;
+    font-weight: bold;
+    font-size: 1.1em;
+}
+
+/* The actual description box (hidden by default) */
+.tooltip-text {
+    visibility: hidden;
+    width: 200px;
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 8px;
+    position: absolute;
+    z-index: 2100; /* Higher than modal content */
+    bottom: 125%; /* Position above the icon */
+    left: 50%;
+    margin-left: -100px;
+    opacity: 0;
+    transition: opacity 0.3s;
+    font-size: 0.8rem;
+    line-height: 1.4;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+/* Tooltip arrow */
+.tooltip-text::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #333 transparent transparent transparent;
+}
+
+/* Show the tooltip when hovering */
+.tooltip-container:hover .tooltip-text {
+    visibility: visible;
+    opacity: 1;
+}

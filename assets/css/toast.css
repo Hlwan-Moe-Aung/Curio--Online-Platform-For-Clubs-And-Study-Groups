@@ -1,0 +1,110 @@
+.toast {
+    position: fixed;
+    bottom: 24px;
+    left: 24px;
+    background-color: #212121; /* Dark grey like YT */
+    color: white;
+    padding: 12px 24px;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-width: 300px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    z-index: 9999;
+    font-family: Roboto, Arial, sans-serif;
+    animation: slideIn 0.3s ease-out;
+}
+
+.toast.error {
+    border-left: 4px solid #ff4e4e; /* Red accent for errors */
+}
+
+.toast-close {
+    position: relative;
+    background: none;
+    border: none;
+    cursor: pointer;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    margin-left: 15px;
+}
+
+.progress-ring {
+    position: absolute;
+    transform: rotate(-90deg);
+}
+
+.progress-ring__circle {
+    /* Circumference for r=10 is ~62.8 */
+    stroke-dasharray: 62.8;
+    stroke-dashoffset: 0;
+    transition: stroke-dashoffset 5s linear;
+}
+
+/* The timer starts when the toast is rendered */
+.toast.active .progress-ring__circle {
+    stroke-dashoffset: 62.8;
+}
+
+.close-icon {
+    color: #ffffff; /* Pure white X */
+    font-size: 12px;
+    font-weight: bold;
+    z-index: 2;
+    line-height: 1;
+}
+
+/* Hover effect to make it feel interactive */
+.toast-close:hover .close-icon {
+    color: #3ea6ff;
+}
+
+@keyframes slideIn {
+    from { transform: translateX(-100%); opacity: 0; }
+    to { transform: translateX(0); opacity: 1; }
+}
+
+.toast.fade-out {
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+.toast-actions {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.toast-action-btn {
+    background: none;
+    border: none;
+    color: #3ea6ff; /* YouTube's signature action blue */
+    text-transform: uppercase;
+    font-weight: 500;
+    cursor: pointer;
+    letter-spacing: 0.5px;
+}
+
+.toast-action-btn:hover {
+    color: #7abfff;
+}
+
+.spinner {
+    width: 12px;
+    height: 12px;
+    border: 2px solid rgba(255,255,255,0.3);
+    border-radius: 50%;
+    border-top-color: #fff;
+    animation: spin 0.8s linear infinite;
+    display: inline-block;
+    margin-left: 5px;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
