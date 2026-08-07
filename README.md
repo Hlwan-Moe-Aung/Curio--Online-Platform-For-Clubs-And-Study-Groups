@@ -3,6 +3,10 @@
 Curio is a role-based, web-based community management platform designed to eliminate the manual overhead of organizing academic clubs and peer study groups. It provides dedicated management tools, approval workflows, and interactive discussion spaces to help students collaborate and learn effectively.
 
 ---
+## Contributors 
+
+1. Hlwan Moe Aung (Leader)
+2. Shun Lae Myo
 
 ## 💡 Key Features & Architecture
 
@@ -49,9 +53,3 @@ You can run the entire platform locally using Docker without needing to manually
 4. **Stop the containers:**
    Bash
        docker-compose down
-
-### Contributors 
-
-1. Hlwan Moe Aung (Leader)
-2. Shun Lae Myo
-
