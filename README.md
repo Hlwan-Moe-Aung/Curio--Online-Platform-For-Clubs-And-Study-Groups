@@ -50,3 +50,8 @@ You can run the entire platform locally using Docker without needing to manually
    Bash
        docker-compose down
 
+### Contributors 
+
+1. Hlwan Moe Aung (Leader)
+2. Shun Lae Myo
+
